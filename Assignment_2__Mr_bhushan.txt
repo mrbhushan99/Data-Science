@@ -1,0 +1,104 @@
+SQL> --12 WAQTD DETAILS OF EMPLOYEES HAVING COMMISSION MORE THAN SALERY
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE COMM>SAL;
+SP2-0640: Not connected
+SQL> CONN
+Enter user-name: SCOTT/TIGER
+ERROR:
+ORA-01017: invalid username/password; logon denied 
+
+
+SQL> scott/tiger
+SP2-0734: unknown command beginning "scott/tige..." - rest of line ignored.
+SQL> conn
+Enter user-name: scott
+Connected.
+SQL> 
+SQL> --12 WAQTD DETAILS OF EMPLOYEES HAVING COMMISSION MORE THAN
+SQL> select *
+  2  	from emp
+  3  	
+  4  
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE COMM>SAL;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM      
+---------- ---------- --------- ---------- --------- ---------- ----------      
+    DEPTNO                                                                      
+----------                                                                      
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400      
+        30                                                                      
+                                                                                
+
+SQL> --13 WAQTD EMPNO OF EMPLOYEES HIRED BEFORE THE YEAR 87
+SQL> SELECT EMPNO HIRED_BEFORE_87_
+  2  FROM EMP
+  3  WHERE HIREDATE<'01-JAN-1981';
+
+HIRED_BEFORE_87_                                                                
+----------------                                                                
+            7369                                                                
+
+SQL> --14 WAQTD DETAILS OF EMPLOYEES WORKING AS AN ANALYST
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE JON='ANALYST';
+WHERE JON='ANALYST'
+      *
+ERROR at line 3:
+ORA-00904: "JON": invalid identifier 
+
+
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE JOB='ANALYST';
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM      
+---------- ---------- --------- ---------- --------- ---------- ----------      
+    DEPTNO                                                                      
+----------                                                                      
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                 
+        20                                                                      
+                                                                                
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                 
+        20                                                                      
+                                                                                
+
+SQL> --15 WAQTD DETAILS OF EMPS EARNING MORE THAN 2000 RUPEES PER MONTH
+SQL> SELECT *
+  2  FROM EMP
+  3  WHERE SAL>2000;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM      
+---------- ---------- --------- ---------- --------- ---------- ----------      
+    DEPTNO                                                                      
+----------                                                                      
+      7566 JONES      MANAGER         7839 02-APR-81       2975                 
+        20                                                                      
+                                                                                
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                 
+        30                                                                      
+                                                                                
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                 
+        10                                                                      
+                                                                                
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM      
+---------- ---------- --------- ---------- --------- ---------- ----------      
+    DEPTNO                                                                      
+----------                                                                      
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                 
+        20                                                                      
+                                                                                
+      7839 KING       PRESIDENT            17-NOV-81       5000                 
+        10                                                                      
+                                                                                
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                 
+        20                                                                      
+                                                                                
+
+6 rows selected.
+
+SQL> SPOOL OFF;
