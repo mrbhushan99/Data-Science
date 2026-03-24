@@ -1,0 +1,143 @@
+-- 1. WAQTD number of employees getting salary less than 2000 in DEPTNO 10
+
+ select count(empno)
+ from emp
+ where sal<2000 and deptno=10;
+ 
+
+
+-- 2. WAQTD total salary needed to pay employees working as CLERK
+
+select sum(sal)
+from emp
+where job='CLERK';
+
+
+
+--3. WAQTD average salary needed to pay all employees
+
+SELECT AVG(SAL)
+FROM EMP;
+ 
+
+
+--4. WAQTD number of employees having 'A' as their first character
+
+ SELECT COUNT(empno)
+ FROM EMP
+ where ename like('a%') ;
+
+
+--5. WAQTD number of employees working as CLERK or MANAGER
+
+select count(ename) 
+from emp
+where job in('clerk','manager');
+ 
+
+
+--6. WAQTD total salary needed to pay employees hired in FEB
+
+ select sum(sal)
+ from emp 
+ WHERE EXTRACT(MONTH FROM HIREDATE) = 2;
+
+-- alternate solution this is fisible.. give by mam  
+--6 
+select sum(sal)
+from emp
+where hiredate like '%feb%';
+
+-- 7. WAQTD number of employees reporting to 7839 (MGR)
+
+select count(empno)
+from emp
+where mgr=7839;
+ 
+
+
+-- 8. WAQTD number of employees getting commission in DEPTNO 30
+
+ select count(empno)
+ from emp 
+ where comm is not null and deptno=30;
+
+
+-- 9. WAQTD avg sal, total sal, number of emps and maximum salary given to employees working as PRESIDENT
+
+ select avg(sal),sum(sal),count(empno),max(sal)
+ from emp 
+ where job = 'president';
+
+--10. WAQTD number of employees having 'A' in their names
+
+select count(empno)
+from emp
+where ename like ('%a%') ;
+
+-- 11. WAQTD number of emps and total salary needed to pay the employees who have 2 consecutive 'L's in their names
+
+select count(empno),sum(sal)
+from emp 
+where ename like '%ll%' ;
+
+-- 12. WAQTD number of departments present in employee table
+
+select count(distinct deptno)
+from emp ;
+
+
+--13. WAQTD number of employees having character 'Z' in their names
+
+select count(empno)
+from emp 
+where ename like '%z%' ;
+
+
+--14. WAQTD number of employees having 'S' in their names
+
+select count(empno)
+from emp 
+where ename like '%s%' ;
+ 
+
+
+--15. WAQTD total salary given to employees working as CLERK in DEPT 30
+
+ select sum(sal)
+ from emp
+ where job='clerk'and deptno=30;
+
+
+--16. WAQTD maximum salary given to the employees working as ANALYST
+
+ select max(sal)
+ from emp
+ where job='analyst';
+
+
+--17. WAQTD number of distinct salaries present in employee table
+
+ select count(distinct sal)
+ from emp;
+
+-- 18. WAQTD number of jobs present in employee table
+
+ select count(distinct job)
+ from emp;
+
+
+--19. WAQTD average salary given to the CLERK
+
+ select avg(sal)
+ from emp
+ where job ='clerk';
+
+
+--20. WAQTD minimum salary given to the employees who work in DEPT 10 as MANAGER or a CLERK
+
+select min(sal)
+from emp
+where deptno=10 and job in('manager','clerk');
+
+SQL> SPOOL OFF;
